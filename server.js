@@ -4,10 +4,10 @@ var bodyparser=require('body-parser');
 var mongoose=require('mongoose');
 var methodOverride=require('method-override');
 var expressSanitizer=require('express-sanitizer');
-var port=process.env.PORT;
+var port=3000 || process.env.PORT;
 // var promise = mongoose.connect('mongodb://localhost/blog', {
 //     useMongoClient: true});
-var promise = mongoose.connect('mongodb://username:password@ds159707.mlab.com:59707/restblog', {
+var promise = mongoose.connect('mongodb://username:password@ds111258.mlab.com:11258/restblog', {
     useMongoClient: true});
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(expressSanitizer());        //This line must always be below body-parser
