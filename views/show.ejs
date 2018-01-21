@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+</head>
+<body>
+<div class="ui fixed menu">
+    <div class="ui container">
+        <div class="header item"><i class="code icon"></i>Blog</div>
+        <a href="/" class="item">Home</a>
+        <a href="/blogs/new" class="item">New Post</a>
+    </div>
+</div>
+<!--Navbar till now,insert code after this line-->
+<div class="ui main text container">
+    <div class="ui huge header"><%=blog.title%></div>
+    <div class="ui top attached segment">
+        <div class="item">
+            <div class="sizing">
+                <img class="ui rounded centered image" style="max-height:100%;max-width:100%;" src="<%=blog.image%>">
+            </div>
+            <div class="content">
+                <span><%=blog.created.toDateString()%></span>
+            </div>
+            <div class="description">
+                <p><%-blog.body%></p>
+            </div>
+            <a href="/blogs/<%=blog._id%>/edit" class="ui blue basic button">Edit</a>
+            <form id="delete" action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+                 <button class="ui red basic button">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
