@@ -28,7 +28,7 @@ var Blog=mongoose.model("Blog",schema);
 //     body:"This is the first post"
 // });
 app.get("/",function(req,res){
-    res.redirect("/blogs");
+    res.redirect("/blogs")
 });
 app.post("/blogs",function(req,res){
     req.body.blog.body=req.sanitize(req.body.blog.body);
